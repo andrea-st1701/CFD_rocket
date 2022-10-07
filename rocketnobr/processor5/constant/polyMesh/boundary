@@ -1,0 +1,95 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    frontAndBack
+    {
+        type            patch;
+        nFaces          90;
+        startFace       295967;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          0;
+        startFace       296057;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          72;
+        startFace       296057;
+    }
+    lowerWall
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          40;
+        startFace       296129;
+    }
+    upperWall
+    {
+        type            patch;
+        nFaces          40;
+        startFace       296169;
+    }
+    Part1
+    {
+        type            wall;
+        inGroups        List<word> 
+2
+(
+motorBikeGroup
+wall
+)
+;
+        nFaces          17710;
+        startFace       296209;
+    }
+    procBoundary5to1
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          4;
+        startFace       313919;
+        matchTolerance  0.0001;
+        myProcNo        5;
+        neighbProcNo    1;
+    }
+    procBoundary5to2
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          4046;
+        startFace       313923;
+        matchTolerance  0.0001;
+        myProcNo        5;
+        neighbProcNo    2;
+    }
+    procBoundary5to4
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          675;
+        startFace       317969;
+        matchTolerance  0.0001;
+        myProcNo        5;
+        neighbProcNo    4;
+    }
+)
+
+// ************************************************************************* //

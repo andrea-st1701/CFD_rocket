@@ -1,0 +1,95 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    frontAndBack
+    {
+        type            patch;
+        nFaces          60;
+        startFace       293671;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          45;
+        startFace       293731;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          0;
+        startFace       293776;
+    }
+    lowerWall
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          21;
+        startFace       293776;
+    }
+    upperWall
+    {
+        type            patch;
+        nFaces          21;
+        startFace       293797;
+    }
+    Part1
+    {
+        type            wall;
+        inGroups        List<word> 
+2
+(
+motorBikeGroup
+wall
+)
+;
+        nFaces          22402;
+        startFace       293818;
+    }
+    procBoundary3to0
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          3793;
+        startFace       316220;
+        matchTolerance  0.0001;
+        myProcNo        3;
+        neighbProcNo    0;
+    }
+    procBoundary3to1
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          474;
+        startFace       320013;
+        matchTolerance  0.0001;
+        myProcNo        3;
+        neighbProcNo    1;
+    }
+    procBoundary3to4
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          1734;
+        startFace       320487;
+        matchTolerance  0.0001;
+        myProcNo        3;
+        neighbProcNo    4;
+    }
+)
+
+// ************************************************************************* //
